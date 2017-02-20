@@ -1,14 +1,16 @@
 README ChromDensityNano
 
-The following codes allow for a spatial analysis of chromatin density signal from transmission electrom microscopy (TEM) images. For details see†Nanoscale changes in chromatin organization represent the initial steps of tumorigenesis: a transmission electron microscopy study†. Lusik†Cherkezyan, Yolanda Stypula-Cyrus, Hariharan Subramanian, Craig White, Mart Dela Cruz, Ramesh K Wali, Michael J Goldberg, Laura K Bianchi, Hemant K Roy and Vadim Backman.†BMC Cancer 2014 14:189. DOI: 10.1186/1471-2407-14-189
+The following codes allow for a spatial analysis of chromatin density signal from transmission electrom microscopy (TEM) images. For details see¬†Nanoscale changes in chromatin organization represent the initial steps of tumorigenesis: a transmission electron microscopy study¬†. Lusik¬†Cherkezyan, Yolanda Stypula-Cyrus, Hariharan Subramanian, Craig White, Mart Dela Cruz, Ramesh K Wali, Michael J Goldberg, Laura K Bianchi, Hemant K Roy and Vadim Backman.¬†BMC Cancer 2014 14:189. DOI: 10.1186/1471-2407-14-189
 
 A step-by-step guide to perform chromatin density analysis using these codes is described in:
-Transmission Electron Microscopy Imaging to analyse chromatin density distribution at the nanoscale level. Tohnyui Ndinyanka Fabrice, Lusik Cherkezyan, Christoph Ringli and CÈlia Baroux. Methods in Molecular Biology Springer Book Series, Ed NY, Special Issue ìPlant Chromatinî (2017) in press
+Transmission Electron Microscopy Imaging to analyse chromatin density distribution at the nanoscale level. Tohnyui Ndinyanka Fabrice, Lusik Cherkezyan, Christoph Ringli and C√©lia Baroux. Methods in Molecular Biology Springer Book Series, Ed NY, Special Issue ‚ÄúPlant Chromatin‚Äù (2017) in press
 
-The†first step†consists in calculating and saving density autocorrelation functions (ACFs) of images that need to be analysed.††The†second step†is generating a best-fit for the distribution of†D, one of the three parameters describing the ACF based on the Whittle-Matern family of functions, accross all images. This parameter evaluates the††nature of the spatial heterogeneity of chromatin density.
-†
+The¬†first step¬†consists in calculating and saving density autocorrelation functions (ACFs) of images that need to be analysed.¬†¬†The¬†second step¬†is generating a best-fit for the distribution of¬†D, one of the three parameters describing the ACF based on the Whittle-Matern family of functions, accross all images. This parameter evaluates the¬†¬†nature of the spatial heterogeneity of chromatin density.
+¬†
+The graphical user interface is launched by running GUI_getACF_and_D.m in Matlab. To run properly it needs the functions rotavg.m, Fit_loop.m, get_ACF.m, and get_D.m saved in the same folder as the main GUI code. 
+ 
 GUI_getACF_and_D.m
-Matlab code for the graphical user interface. It launches the initial prompt window and necessary codes (see below) to perform the calculations†
+Matlab code for the graphical user interface. It launches the initial prompt window and necessary codes (see below) to perform the calculations¬†
 GUI_getACF_and_D.fig
 Matlab figure generating the frame for the interactive user prompt
 get_ACF
@@ -22,7 +24,7 @@ Inputs:
 "Rmin" - size of the smallest resolvable spot (defined by image resolution), in pixels
 "saveName" - name of file in which output data needs to be saved
 "Display" - logical variable determining whether each calculated ACF needs to be displayed
-Outputs contain some of the input parameters used for analysis along with the indices of the excluded images due to SNR (ìoutlierî) and the matrix ACF containing all calculated autocorrelations functions  
+Outputs contain some of the input parameters used for analysis along with the indices of the excluded images due to SNR (‚Äúoutlier‚Äù) and the matrix ACF containing all calculated autocorrelations functions  
 get_D.m
 Matlab function finding parameters of the Whittle-Matern family of functions that ensure the best fit between a set of experimentally measured functions (ACF) and the analytical function, between the length scales rmin and Rmax (see Lusik et al, 2014). Uses function Fit_loop.m
 Syntax: get_D(SavedACF,Rmin,saveName)
